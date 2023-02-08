@@ -1,0 +1,80 @@
+using ConsoleApp2;
+using System;
+
+namespace Program
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            while (true)
+            {
+                Console.WriteLine("1\t Load File");
+                Console.WriteLine("2\t Save File");
+                Console.WriteLine("3\t Create File");
+                Console.WriteLine("4\t Delete File");
+                Console.WriteLine("5\t Update File");
+                Console.WriteLine("6\t Show list");
+                Console.WriteLine("7\t Exit ");
+                try
+                {
+                    int menu = int.Parse(Console.ReadLine()); 
+                    switch (menu)
+                    {
+                        case 1:
+                            {
+                                Manager runLoad = new Manager();
+                                runLoad.LoadFile();
+                            }
+                            break;
+
+                        case 2:
+                            {
+                                Manager runSave = new Manager();
+                                runSave.SaveFile();
+                            }
+                            break;
+
+                        case 3:
+                            {
+                                Manager runCreate = new Manager();
+                                runCreate.CreateFile();
+                            }
+                            break;
+
+                        case 4:
+                            {
+                                Manager runDelete = new Manager();
+                                runDelete.DeleteFile();
+                            }
+                            break;
+                        case 5:
+                            {
+                                Manager runUpdate = new Manager();
+                                runUpdate.UpdateFile();
+
+                            }
+                            break;
+                        case 6:
+                            {
+                                Manager runShow = new Manager();
+                                runShow.ShowList();
+                            }
+                            break;
+                        case 7:
+                            Environment.Exit(0);
+                            break;
+
+                        default:
+                            Console.WriteLine("Nhap lai");
+                            break;
+                    }
+                }
+                catch (Exception e) { Console.WriteLine("loi roi em oi"); }
+
+            }
+        }
+    }
+
+}
